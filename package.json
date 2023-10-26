@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "ts-node-dev src/server.ts",
-    "start": "ts-node src/server.js",
+    "migrations": "npx sequelize-cli db:migrate",
+    "start": "npm run build && npm run migrations && ts-node src/server.js",
     "build": "tsc -p ."
   },
   "keywords": [],
