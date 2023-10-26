@@ -1,23 +1,10 @@
 import { Sequelize } from "sequelize";
+import dotenv from "dotenv";
 
-// const { IP_BANCO, NOME_BANCO, USUARIO_BANCO, SENHA_BANCO, PORTA_BANCO } =
-//   process.env;
+dotenv.config();
 
-const IP_BANCO = "localhost";
-const NOME_BANCO = "hortasdb";
-const USUARIO_BANCO = "lucassantos";
-const SENHA_BANCO = "senhadificil";
-const PORTA_BANCO = "5432";
-
-// if (
-//   !IP_BANCO ||
-//   !NOME_BANCO ||
-//   !USUARIO_BANCO ||
-//   !SENHA_BANCO ||
-//   !PORTA_BANCO
-// ) {
-//   throw new Error("Variáveis de ambiente não definidas");
-// }
+const { IP_BANCO, NOME_BANCO, USUARIO_BANCO, SENHA_BANCO, PORTA_BANCO } =
+  process.env;
 
 export const sequelize = new Sequelize(
   NOME_BANCO!,
