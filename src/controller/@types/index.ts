@@ -5,5 +5,5 @@ export interface INewStatusHorta {
   phSolo: number;
   condutividadeEletricaSolo: number;
   luminosidade: number;
-  dataleitura: Date;
+  dataLeitura: Date;
 }

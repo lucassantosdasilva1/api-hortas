@@ -12,7 +12,6 @@ export class LeituraController {
       phSolo,
       condutividadeEletricaSolo,
       luminosidade,
-      dataleitura,
     } = req.body;
 
     try {
@@ -23,7 +22,7 @@ export class LeituraController {
         phSolo,
         condutividadeEletricaSolo,
         luminosidade,
-        dataleitura: new Date(),
+        dataLeitura: new Date(),
       });
 
       return res.json(status);

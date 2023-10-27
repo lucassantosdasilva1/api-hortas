@@ -5,16 +5,25 @@ const path = require('path');
 const Sequelize = require('sequelize');
 const process = require('process');
 const basename = path.basename(__filename);
-const env = process.env.NODE_ENV || 'development';
 const config = require(__dirname + '/../config/config.json')[env];
 const db = {};
 
-let sequelize;
-if (config.use_env_variable) {
-  sequelize = new Sequelize(process.env[config.use_env_variable], config);
-} else {
-  sequelize = new Sequelize(config.database, config.username, config.password, config);
-}
+const IP_BANCO = process.env.IP_BANCO;
+const NOME_BANCO = process.env.NOME_BANCO;
+const USUARIO_BANCO = process.env.USUARIO_BANCO;
+const SENHA_BANCO = process.env.SENHA_BANCO;
+const PORTA_BANCO = process.env.PORTA_BANCO;
+
+  export const sequelize = new Sequelize(
+    NOME_BANCO,
+    USUARIO_BANCO,
+    SENHA_BANCO,
+    {
+      host: IP_BANCO,
+      port: Number(PORTA_BANCO),
+      dialect: "postgres",
+    }
+  );
 
 fs
   .readdirSync(__dirname)
