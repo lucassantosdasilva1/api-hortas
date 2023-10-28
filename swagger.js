@@ -1,25 +1,25 @@
 /**
  * @swagger
  * tags:
- *   name: Transactions
- *   description: API para gerenciamento de transações financeiras
+ *   name: Leituras
+ *   description: API para gerenciamento de informações da horta
  */
 
 /**
  * @swagger
- * /transactions:
+ * /api-hortas/leituras:
  *   get:
- *     summary: Retorna uma lista de transações
- *     tags: [Transactions]
+ *     summary: Retorna uma lista de leituras
+ *     tags: [Leituras]
  *     responses:
  *       200:
- *         description: Lista de transações retornada com sucesso
+ *         description: Lista de leituras retornada com sucesso
  *       500:
  *         description: Erro interno do servidor
- * /newTransaction:
+ * /api-hortas/createLeitura:
  *   post:
- *     summary: Cria uma nova transação
- *     tags: [Transactions]
+ *     summary: Cria uma nova leitura
+ *     tags: [Leituras]
  *     requestBody:
  *       required: true
  *       content:
@@ -27,81 +27,52 @@
  *            schema:
  *              type: object
  *              properties:
- *                name:
- *                  type: string
- *                  default: compra de sapato
- *                amount:
+ *                temperaturaSolo:
  *                  type: number
- *                  default: 100
- *                category:
- *                  type: string
- *                  default: purchases | food | salary | car | leisure | studies
- *                type:
- *                  type: string
- *                  default: income | outcome
+ *                  default: 0
+ *                temperaturaAmbiente:
+ *                  type: number
+ *                  default: 0
+ *                umidadeAtmosfera:
+ *                  type: number
+ *                  default: 0
+ *                umidadeSolo:
+ *                  type: number
+ *                  default: 0
+ *                phSolo:
+ *                  type: number
+ *                  default: 0
+ *                condutividadeEletricaSolo:
+ *                  type: number
+ *                  default: 0
+ *                luminosidade:
+ *                  type: number
+ *                  default: 0
  *      
  *     responses:
- *       201:
+ *       200:
  *         description: Transação criada com sucesso
  *       400:
  *         description: Erro de validação dos dados
  *       500:
  *         description: Erro interno do servidor
  *
- * /updateTransaction/{id}:
- *   put:
- *     summary: Atualiza uma transação pelo ID
- *     tags: [Transactions]
- *     parameters:
- *       - in: path
- *         name: id
- *         schema:
- *           type: number
- *         required: true
- *         description: ID da transação
- *     requestBody:
- *       required: true
- *       content:
- *         application/json:
- *            schema:
- *              type: object
- *              properties:
- *                name:
- *                  type: string
- *                  default: compra de sapato
- *                amount:
- *                  type: number
- *                  default: 100
- *                category:
- *                  type: string
- *                  default: purchases | food | salary | car | leisure | studies
- *                type:
- *                  type: string
- *                  default: income | outcome
- *     responses:
- *       200:
- *         description: Transação encontrada com sucesso
- *       404:
- *         description: Transação não encontrada
- *       500:
- *         description: Erro interno do servidor
- * 
- * /deleteTransaction/{id}:
+ * /api-hortas/deleteLeitura/{id}:
  *   delete:
- *     summary: Exclui uma transação pelo ID
- *     tags: [Transactions]
+ *     summary: Exclui uma leitura pelo ID
+ *     tags: [Leituras]
  *     parameters:
  *       - in: path
  *         name: id
  *         schema:
  *           type: number
  *         required: true
- *         description: ID da transação
+ *         description: ID da leitura
  *     responses:
  *       200:
- *         description: Transação excluida com sucesso
+ *         description: leitura excluida com sucesso
  *       404:
- *         description: Transação não encontrada
+ *         description: leitrura não encontrada
  *       500:
  *         description: Erro interno do servidor
 */

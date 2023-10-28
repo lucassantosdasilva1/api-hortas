@@ -14,6 +14,10 @@ module.exports = {
         type: Sequelize.DECIMAL,
         allowNull: true,
       },
+      temperaturaAmbiente: {
+        type: Sequelize.DECIMAL,
+        allowNull: true,
+      },
       umidadeAtmosfera: {
         type: Sequelize.DECIMAL,
         allowNull: true,

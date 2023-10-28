@@ -7,6 +7,7 @@ export class LeituraController {
   async create(req: Request<{}, {}, INewStatusHorta>, res: Response) {
     const {
       temperaturaSolo,
+      temperaturaAmbiente,
       umidadeAtmosfera,
       umidadeSolo,
       phSolo,
@@ -17,6 +18,7 @@ export class LeituraController {
     try {
       const status = await Statushorta.create({
         temperaturaSolo,
+        temperaturaAmbiente,
         umidadeAtmosfera,
         umidadeSolo,
         phSolo,

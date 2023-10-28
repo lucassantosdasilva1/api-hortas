@@ -17,6 +17,10 @@ Statushorta.init(
       type: DataTypes.DECIMAL,
       allowNull: true,
     },
+    temperaturaAmbiente: {
+      type: DataTypes.DECIMAL,
+      allowNull: true,
+    },
     umidadeAtmosfera: {
       type: DataTypes.DECIMAL,
       allowNull: true,

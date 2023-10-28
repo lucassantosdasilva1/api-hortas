@@ -45,7 +45,7 @@ router.post("/createLeitura", newLeitura.create);
 
 // router.put("/updateTransaction/:id", newLeitura.update);
 
-router.delete("/deleteTransaction/:id", newLeitura.delete);
+router.delete("/deleteLeitura/:id", newLeitura.delete);
 
 const swaggerOptions = {
   definition: {
