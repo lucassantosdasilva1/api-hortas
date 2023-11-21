@@ -51,7 +51,7 @@ const swaggerOptions = {
   definition: {
     openapi: "3.0.0",
     info: {
-      title: "Finances Plan API",
+      title: "API hortas",
       version: "1.0.0",
       description: "API para gerenciamento de hortas",
       contact: {
